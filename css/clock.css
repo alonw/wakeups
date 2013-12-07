@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+body {
+	margin:0; 
+	padding:0; 
+	overflow:hidden;
+	/*background:url('http://www.psdgraphics.com/file/light-wooden-background.jpg'); */
+	background:url('http://www2.openphoto.net/volumes/sizes/korry/25789/2.jpg');
+	background-size:cover; 
+	background-repeat:no-repeat; 
+	background-color:black; 
+	color:white; 
+	border:0px;
+	font-family: "Alef Hebrew",
+            “Helvetica Neue”,
+			Helvetica,
+			Arial,
+			sans-serif;
+}
+
+canvas {
+    border: 0px;
+}
+
+

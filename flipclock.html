@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>FlipClock.js</title>
+  
+  <meta name="description" content="{exp:stash:get name="page_description"}">
+
+  <!-- <meta name="google-site-verification" content="" /> -->
+
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="http://flipclockjs.com/_themes/flipclockjs/css/foundation.css">
+  <link rel="stylesheet" href="http://flipclockjs.com/_themes/flipclockjs/css/font-awesome.css">
+  <link rel="stylesheet" href="http://flipclockjs.com/_themes/flipclockjs/css/flipclock.css">
+  <link rel="stylesheet" href="http://flipclockjs.com/_themes/flipclockjs/css/app.css">
+  
+  <link href="http://fonts.googleapis.com/css?family=Oleo+Script|Ubuntu:300" rel="stylesheet" type="text/css" data-noprefix>
+  
+  <script src="http://flipclockjs.com/_themes/flipclockjs/js/libs/prism.js"></script>
+  <script src="http://flipclockjs.com/_themes/flipclockjs/js/libs/modernizr.foundation.js"></script>
+  
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 8]>
+  	<script src="http://flipclockjs.com/_themes/flipclockjs/css//assets/css/font-awesome-ie7.css"></script>
+  <![endif]-->
+  
+  <!--[if lt IE 9]>
+    <script src="http://flipclockjs.com/_themes/flipclockjs/js/http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    
+</head>
+
+<body>
+
+<div class="container hinge-nav">
+	
+	<header class="header waypoint " id="download">
+		
+		<h1><a href="http://flipclockjs.com/">בוקר טוב ילדים!</a> <span class="version">המשימה הבאה: להתלבש!</span></h1>
+		
+		<div class="flip-counter clock"></div>
+
+<div class="buttons">
+	<a href="https://github.com/objectivehtml/FlipClock/archive/master.zip" class="grand-button hide-for-small"><i class="icon-download"></i> Download</a>
+	<a href="https://github.com/objectivehtml/FlipClock" class="grand-button"><i class="icon-github"></i> Fork</a>
+	<a href="https://twitter.com/flipclockjs" class="grand-button"><i class="icon-twitter"></i> Follow</a>
+</div>
+
+		
+	</header>
+	
+	<div id="main" class="page hinge-nav">
+		
+		<div class="row">
+	
+	<div class="three columns">
+		
+		<div class="sidebar">
+	
+	<ul>
+			
+		<li><a href="#overview">Why FlipClock.js?</a></li>
+		
+			
+		<li><a href="#authors">Authors</a></li>
+		
+			
+		<li><a href="#contributions">Contributions</a></li>
+		
+			
+		<li><a href="#requirements">Requirements</a></li>
+		
+			
+		<li><a href="#basic-example">Basic Example</a></li>
+		
+			
+		<li><a href="#options">Options</a></li>
+		
+			
+		<li><a href="#methods">Methods</a></li>
+		
+			
+		<li><a href="#callbacks">Callbacks</a></li>
+		
+			
+		<li><a href="http://flipclockjs.com/faces">Clock Faces</a></li>
+		
+			
+		<li><a href="http://flipclockjs.com/api">Developer API</a></li>
+		
+	
+	</ul>
+	
+		
+</div>
+
+		
+	</div>
+	
+	<div class="nine columns unhinge-nav">
+			
+			
+		
+			
+							
+										
+				<h2 id="overview" class="waypoint">Why FlipClock.js?</h2>
+				
+				<p>So why use this library when there are many others with the same name? Well, this library was created because the other solutions weren&#8217;t abstract enough to provide a deep level of customization without rewriting the code. (Besides the domain was available, who could pass it up?). Some libraries have a huge cascade of conditionals, while others simply hard-code too much into their scripts. Most projects had a very narrow scope. After reviewing as many of the existing solutions as possible, it was determined a proper extendible API needed to be written to create any kind of clock or counter (and the flip effect is just cool). The following are the logical requirements that were considered when creating the API.</p>
+
+<ul>
+	<li>Use as a clock</li>
+	<li>Use as a timer</li>
+	<li>Use as a countdown</li>
+	<li>Themeable using pure CSS</li>
+	<li>Clean & Dry Syntax</li>
+	<li>Abstract everything into reusable objects</li>
+	<li>Full-Featured Developer API to create custom &#8220;Clock Faces&#8221;</li>
+</ul>
+				
+					
+			
+							
+									<hr id="authors" class="waypoint">
+										
+				<h3 >Authors</h3>
+				
+				<ul>
+	<li><a href="https://objectivehtml.com">Objective HTML</a></li>
+	<li><a href="https://twitter.com/justin_kimbrell">Justin Kimbrell</a></li>
+</ul>
+				
+					
+			
+							
+									<hr id="contributions" class="waypoint">
+										
+				<h3 >Contributions</h3>
+				
+				<p>Big thanks to all the examples on the Internet. But in particular, a huge thanks goes out to Adem Ilter who built <a href="http://codepen.io/ademilter/pen/czIGo">this example</a>, which provided the best animation and least amount of code to prove the concept.</p>
+				
+					
+			
+							
+									<hr id="requirements" class="waypoint">
+										
+				<h3 >Requirements</h3>
+				
+				<ul>
+	<li><a href="http://jquery.com/">jQuery 1.7.x+</a></li>
+</ul>
+				
+					
+			
+							
+									<hr id="basic-example" class="waypoint">
+										
+				<h2 >Basic Example</h2>
+				
+				<h3>Loading the Scripts</h3>
+	
+<p>FlipClock.js requires a few files to work properly. The minified source contains all the clock faces for maximum portability.</p>
+
+<pre><code class="language-clike">
+&lt;html>
+	&lt;head>
+		&lt;link rel="stylesheet" href="http://flipclockjs.com/assets/css/flipclock.css">
+	&lt;/head>
+	&lt;body>
+		&lt;div class="your-clock">&lt;/div>
+		
+		&lt;script src="http://flipclockjs.com/assets/js/libs/jquery.js">&lt;/script>
+		&lt;script src="http://flipclockjs.com/assets/js/flipclock/flipclock.min.js">&lt;/script>
+	&lt;/body>
+&lt;/html>
+</code></pre>
+
+<h3>Instantiating</h3>
+	
+<p>FlipClock.js requires jQuery for DOM manipulation. It works a typical jQuery plugin, but instead of returning a jQuery object, a FlipClock object is returned.</p>
+
+<pre><code class="language-clike">
+var clock = $('.your-clock').FlipClock({
+// ... your options here
+});
+</code></pre>
+
+<pre><code class="language-clike">
+var clock = new FlipClock($('.your-clock'), {
+// ... your options here
+});
+</code></pre>
+
+<p><em>Note, both these examples would produce the example same thing. Use the syntax that works best for you.</em></p>
+				
+					
+			
+							
+									<hr id="options" class="waypoint">
+										
+				<h2 >Options</h2>
+				
+				<dl>
+	<dt>autoStart</dt>
+	<dd><b>(boolean)</b> If this is set to <em>false</em>, the clock will not auto start. The default value is <em>true</em>.</dd>
+	<dt>countdown</dt>
+	<dd><b>(boolean)</b> If this is set to <em>true</em>, the clock will count down instead of up. The default value is <em>false</em>.</dd>
+	<dt>callbacks</dt>
+	<dd><b>(object)</b> An object of callback functions that are triggered at various times. For more information, <a href="#callbacks">view the callback documentation</a>.</dd>
+	<dt>classes</dt>
+	<dd><b>(object)</b> This is an object of CSS classes to use to append to DOM objects</dd>
+	<dt>clockFace</dt>
+	<dd><b>(string)</b> This is the name of the clock that is used to build the clock display. The default value is <em>HourlyCounter</em>.</dd>
+	<dt>defaultClockFace</dt>
+	<dd><b>(string)</b> This is the default clock face to use if the defined clock face does not exist. The default value is <em>HourlyCounter</em>.</dd>
+	<dt>defaultLanguage</dt>
+	<dd><b>(string)</b> This is the default langauge to use. The default value is <em>english</em>.</dd>
+</dl>
+				
+					
+			
+							
+									<hr id="methods" class="waypoint">
+										
+				<h2 >Methods</h2>
+				
+				<p>The following methods all belong to the <a href="#factory">FlipClock.Factory</a> class.</a>
+
+<h3 id="start">start()</h3>
+
+<p>This method will start the clock just call the .start() method on an FlipClock object.</p>
+
+<pre><code class="language-clike">
+clock.start(function() {
+// this (optional) callback will fire each time the clock flips
+});
+</code></pre>		
+
+<h3 id="stop">stop()</h3>
+
+<p>This method will stop the clock just call the .stop() method on an FlipClock object.</p>
+
+<pre><code class="language-clike">
+clock.stop(function() {
+// this (optional) callback will fire after the clock stops
+});
+</code></pre>
+
+<h3 id="setTime">setTime()</h3>
+
+<p>This method will set the clock time after it has been instantiated just call the .setTime() method on an FlipClock object.</p>
+
+<pre><code class="language-clike">
+clock.setTime(3600);
+</code></pre>
+
+<h3 id="setCountdown">setCountdown()</h3>
+
+<p>This method will change the clock from counting up or down.</p>
+
+<pre><code class="language-clike">
+clock.setCountdown(true);
+</code></pre>
+
+<h3 id="getTime">getTime()</h3>
+
+<p>To get the clock time after it has been instantiated just call the .getTime() method on an FlipClock object.</p>
+
+<pre><code class="language-clike">
+var time  = clock.getTime(); // Returns the FlipClock.Time object
+</code></pre>
+				
+					
+			
+							
+									<hr id="callbacks" class="waypoint">
+										
+				<h2 >Callbacks</h2>
+				
+				<dl>
+	<dt>destroy</dt>
+	<dd>This callback is triggered when the timer is destroyed</dd>
+	<dt>create</dt>
+	<dd>This callback is triggered when the clock face is created</dd>
+	<dt>init</dt>
+	<dd>This callback is triggered when the FlipClock object is initialized</dd>
+	<dt>interval</dt>
+	<dd>This callback is triggered with each interval of the timer</dd>
+	<dt>start</dt>
+	<dd>This callback is triggered when the clock is started</dd>
+	<dt>stop</dt>
+	<dd>This callback is triggered when the clock is stopped</dd>
+	<dt>reset</dt>
+	<dd>This callback is triggered when the timer has been reset</dd>
+</dl>
+				
+					
+			
+					
+			
+					
+		
+		
+	</div>
+	
+</div>
+
+		
+	</div>
+	
+	<footer class="footer">
+	
+		<p class="footer-copy">&copy; 2013 - <a href="https://www.objectivehtml.com">Objective HTML, LLC</a></p>
+					
+	</footer>
+
+    <script src="http://flipclockjs.com/_themes/flipclockjs/js/libs/jquery.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/libs/sammy.min.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/libs/waypoints.min.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/libs/base.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/flipclock.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/faces/hourlycounter.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/faces/dailycounter.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/faces/twentyfourhourclock.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/faces/twelvehourclock.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/flipclock/faces/counter.js"></script>
+	<script src="http://flipclockjs.com/_themes/flipclockjs/js/app.js"></script>
+		
+		
+
+</div>
+
+</body>
+</html>

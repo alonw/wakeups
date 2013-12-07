@@ -1,0 +1,267 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	/*background:url('../img/tile_bg.jpg') #b0b0b0;*/
+	position:relative;
+}
+
+body{
+	/*background:url('../img/page_bg_center.jpg') no-repeat center center;*/
+	background:url('http://cdn.superbook.cbn.com/sites/default/files/1920x1080_Background_2.png');
+	min-height: 600px;
+    padding: 200px 0 0;
+		font-family: "Alef Hebrew",
+            “Helvetica Neue”,
+			Helvetica,
+			Arial,
+			sans-serif;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer{
+	display: block;
+}
+
+
+/*----------------------------
+	Main Section
+-----------------------------*/
+
+#note{
+	color: #666666;
+	font-size: 21px;
+	margin: 0 auto;
+	padding: 4px;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+	width: 400px;
+}
+
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #111111;
+	bottom: 0;
+	box-shadow: 0 -1px 2px #111111;
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+}
+
+footer h2{
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+	left: 50%;
+	margin-left: -400px;
+	padding: 13px 0 0;
+	position: absolute;
+	width: 540px;
+}
+
+footer h2 i{
+	font-style:normal;
+	color:#888;
+}
+
+footer a.tzine,a.tzine:visited{
+	color: #999999;
+	font-size: 12px;
+	left: 50%;
+	margin: 16px 0 0 110px;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+}
+
+footer a i{
+	color:#ccc;
+	font-style: normal;
+}
+
+footer a i b{
+	color:#c92020;
+	font-weight: normal;
+}
+
+#sun{
+	background:url('http://upload.wikimedia.org/wikipedia/commons/0/0d/O.sun.png');
+}
+
+#itamar{
+	background:url('../img/itamar.jpg');
+}
+
+#romee{
+	background:url('../img/romee.jpg');
+}
+
+.bottom-stripe{
+	background:url(http://flipclockjs.com/_themes/flipclockjs/img/binding_dark.png) repeat;
+}
+
+.mission{
+	border: 8px solid #666;
+	border-radius: 40px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+}
+
+.mission1{
+	background:url(../img/itamar-teeth.png);
+	bottom:20px; 
+	left:65%;
+	width:90px;
+	height:123px;
+	width:90px;
+	z-index:1;
+}
+
+.bottom-wrapper{
+	position:fixed;
+	bottom:0px;
+	width:100%;
+}
+
+.kid{
+	margin:auto;
+}
+
+.kid1{
+	background:url(../img/itamar2.png);
+}
+
+.kid2{
+	background:url(../img/romee2.png);
+}
+
+#clock{
+	position: fixed;
+	top: 0px;
+	max-width: 100%;
+	height: 170px;
+}
+
+
+/*****************      JQUERT COUNTDOWN START     *****************/
+
+.countdownHolder{
+	width:450px;
+	margin:0 auto;
+	font: 40px/1.5 'Open Sans Condensed',sans-serif;
+	text-align:center;
+	letter-spacing:-3px;
+	top: 20px;
+	position: fixed;
+	left: 169px;
+}
+
+.position{
+	display: inline-block;
+	height: 1.6em;
+	overflow: hidden;
+	position: relative;
+	width: 1.05em;
+}
+
+.digit{
+	position:absolute;
+	display:block;
+	width:1em;
+	background-color:#444;
+	border-radius:0.2em;
+	text-align:center;
+	color:#fff;
+	letter-spacing:-1px;
+}
+
+.digit.static{
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+	
+	background-image: linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+	background-image: -o-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+	background-image: -moz-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+	background-image: -webkit-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+	background-image: -ms-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #3A3A3A),
+		color-stop(0.5, #444444)
+	);
+}
+
+/**
+ * You can use these classes to hide parts
+ * of the countdown that you don't need.
+ */
+
+.countDays{ /* display:none !important;*/ }
+.countDiv0{ /* display:none !important;*/ }
+.countHours{}
+.countDiv1{}
+.countMinutes{}
+.countDiv2{}
+.countSeconds{}
+
+
+.countDiv{
+	display:inline-block;
+	width:16px;
+	height:1.6em;
+	position:relative;
+}
+
+.countDiv:before,
+.countDiv:after{
+	position:absolute;
+	width:5px;
+	height:5px;
+	background-color:#444;
+	border-radius:50%;
+	left:50%;
+	margin-left:-3px;
+	top:0.5em;
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.5);
+	content:'';
+}
+
+.countDiv:after{
+	top:0.9em;
+}
+
+
+/*****************      JQUERT COUNTDOWN START     *****************/
